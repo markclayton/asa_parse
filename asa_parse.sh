@@ -8,4 +8,4 @@ NAME=$(echo $1 | cut -d '.' -f1)
 OUT_EXTENSION=".csv"
 OUTFILE=$NAME$OUT_EXTENSION
 echo "date,action,source,dest" > $OUTFILE
-./run.awk $1 | head -100 | uniq >> $OUTFILE 
+./run.awk $1 | sort | uniq >> $OUTFILE 
